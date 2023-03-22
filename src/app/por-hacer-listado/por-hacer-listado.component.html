@@ -1,0 +1,29 @@
+<div class="todo-content">
+  <h1 class="page-title">Por Hacer</h1>
+
+
+  <ul class="todo-list">
+    <li *ngFor="let ph of ListadoPorHacer" [class.completed]="ph.completado === true" >
+      <div class="todo-row" >
+
+        <a class="todo-completed" (click)="cambiarCompletado(ph)">
+          <i class="material-icons toggle-completed-checkbox"></i>
+        </a>
+
+        <span class="todo-title">
+              {{ph.texto}}
+        </span>
+
+        <span class="todo-actions">
+                <a (click)="editar(ph)">
+                  <i class="material-icons edit">edit</i>
+                </a>
+                <a (click)="borrar(ph.id)">
+                  <i class="material-icons delete">clear</i>
+                </a>
+        </span>
+
+      </div>
+
+    </li>
+  </ul>
